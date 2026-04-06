@@ -110,6 +110,9 @@ with tab1:
         features = extract_features(img)
         diagnosis = msig_inference_engine(features)
         
+        # Save the finding to a variable we can use later
+        st.session_state['current_visual'] = diagnosis['Diagnosis']
+        
         c1, c2 = st.columns(2)
         c1.image(img, caption="Original Feed", use_container_width=True)
         c2.image(features["debug_mask"], caption="Texture Analysis", use_container_width=True)
