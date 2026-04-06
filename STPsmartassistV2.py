@@ -149,9 +149,9 @@ with tab2:
 # ---------------------------------------------------------
 # CONSENSUS ENGINE (THE FINAL COMMAND)
 # ---------------------------------------------------------
-    def final_action_plan(visual_diag, wizard_settle, wizard_texture):
-        st.write("---")
-        st.header("⚡ High-Priority Action Plan")
+def final_action_plan(visual_diag, wizard_settle, wizard_texture):
+    st.write("---")
+    st.header("⚡ High-Priority Action Plan")
     
     # Priority 1: Denitrification (Immediate Threat)
     if wizard_settle == "Plumes/Clumps rising to top":
