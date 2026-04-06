@@ -143,5 +143,45 @@ with tab2:
         df = pd.DataFrame(report_data)
         st.table(df)
         st.download_button("📥 Download Report (CSV)", df.to_csv(index=False), "STP_Report.csv")
+# ---------------------------------------------------------
+# CONSENSUS ENGINE (THE FINAL COMMAND)
+# ---------------------------------------------------------
+def final_action_plan(visual_diag, wizard_settle, wizard_texture):
+    st.write("---")
+    st.header("⚡ High-Priority Action Plan")
+    
+    # Priority 1: Denitrification (Immediate Threat)
+    if wizard_settle == "Plumes/Clumps rising to top":
+        st.error("🚨 **CRITICAL: Secondary Clarifier Failure Imminent**")
+        st.markdown("""
+        **Consensus:** Visuals show process stress, but physical rising sludge is the priority.
+        * **Immediate Action:** Increase RAS (Return Sludge) rate to 100-150% of influent.
+        * **Process Check:** Reduce aeration slightly to minimize Nitrate formation.
+        """)
+        
+    # Priority 2: Old Sludge / Nocardia
+    elif "Old Sludge" in visual_diag or wizard_texture == "Leathery/Thick Brown":
+        st.warning("⚠️ **STRATEGIC: Process Correction Required**")
+        st.markdown("""
+        **Consensus:** Both Visual and Field tests confirm high Sludge Age (MCRT).
+        * **Immediate Action:** Increase WAS (Wasting) by 20% today.
+        * **Maintenance:** Spray foam with water or chlorine solution if Nocardia is persistent.
+        """)
+
+    # Priority 3: Young Sludge
+    elif "Young Sludge" in visual_diag or wizard_texture == "Crisp/White/Bubbly":
+        st.info("ℹ️ **ADVISORY: Building Biomass**")
+        st.markdown("""
+        **Consensus:** System is under-loaded or recovering from a washout.
+        * **Immediate Action:** Stop/Reduce wasting (WAS) until MLSS reaches >3000 mg/L.
+        * **Ref:** MSIG Vol 4, Table 5.16.
+        """)
+    else:
+        st.success("✅ **STABLE: Continue Routine Monitoring**")
+
+# --- INTEGRATION STEPS ---
+# In your 'tab1' section, after your 'diagnosis' is defined, 
+# you should store the diagnosis in a session state so the 
+# engine can read it alongside the sidebar inputs.
 
 stp_wizard()
