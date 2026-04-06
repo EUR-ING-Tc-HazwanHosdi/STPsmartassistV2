@@ -149,7 +149,7 @@ with tab2:
 # ---------------------------------------------------------
 # CONSENSUS ENGINE (THE FINAL COMMAND)
 # ---------------------------------------------------------
-def final_action_plan(visual_diag, wizard_settle, wizard_texture):
+    def final_action_plan(visual_diag, wizard_settle, wizard_texture):
     st.write("---")
     st.header("⚡ High-Priority Action Plan")
     
