@@ -79,7 +79,7 @@ def extract_features(pil_image):
 # STREAMLIT INTERFACE (Your Voice)
 # ---------------------------------------------------------
 st.title("🌊 MSIG Smart Assist Pro")
-[span_15](start_span)st.caption("Integrated with Malaysian Sewerage Industry Guidelines Vol 4[span_15](end_span)")
+st.caption("Integrated with Malaysian Sewerage Industry Guidelines Vol 4")
 
 uploaded_file = st.file_uploader("Upload STP Surface Photo", type=["jpg", "png"])
 
